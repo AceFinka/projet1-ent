@@ -1,0 +1,6 @@
+body { margin: 0; }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; margin-right: 9px; border-radius: 11px; background: linear-gradient(135deg, #4263d3, #263b94); color: white; font-weight: 900; }
+.converter-card { padding: clamp(20px, 5vw, 40px); border: 1px solid #e6e9f4; background: rgba(255,255,255,.94) !important; box-shadow: 0 20px 50px rgba(36,60,144,.09) !important; }
+.result-box { min-height: 128px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; border-radius: 13px; background: #f4f6ff; border: 1px dashed #cbd3f4; }
+.history-row { padding: 11px 14px; font-weight: 600; color: #394366; }
+.history-row + .history-row { border-top: 1px solid #edf0f5; }
