@@ -64,7 +64,7 @@ export default function App() {
       </Toolbar>
     </AppBar>
     <Container maxWidth="md" sx={{ py: { xs: 5, md: 8 } }}>
-      <Box textAlign="center" mb={5}><Typography variant="h3" component="h1" fontWeight={800} sx={{ fontSize: { xs: '2.1rem', sm: '3rem' } }}>Convertissez simplement.</Typography><Typography color="text.secondary" mt={1}>Des mesures précises, en quelques secondes.</Typography></Box>
+      <Box textAlign="center" mb={5}><Typography variant="h3" component="h1" fontWeight={800} sx={{ fontSize: { xs: '2.1rem', sm: '3rem' } }}>Convertissez simplement.</Typography><Typography color="text.secondary" mt={1}>Cette page a CLAIREMENT été conçu par moi.</Typography></Box>
       <Paper elevation={0} className="converter-card">
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} mb={4}>{categories.map(item => <Button key={item.id} startIcon={item.icon} onClick={() => chooseCategory(item.id)} variant={category === item.id ? 'contained' : 'text'} sx={{ flex: 1, py: 1.1, textTransform: 'none', fontWeight: 700 }}>{item.label}</Button>)}</Stack>
         <Typography variant="overline" color="text.secondary" fontWeight={700}>Je veux convertir</Typography>
