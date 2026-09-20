@@ -32,6 +32,10 @@ const units = {
     celsius: { label: 'Celsius', symbol: '°C' },
     fahrenheit: { label: 'Fahrenheit', symbol: '°F' },
     kelvin: { label: 'Kelvin', symbol: 'K' }
+  },
+  puissance: {
+    watt: { label: 'Watts', symbol: 'W', factor: 1 },
+    kilowatt: { label: 'Kilowatts', symbol: 'kW', factor: 1000 }
   }
 };
 

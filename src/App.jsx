@@ -9,12 +9,14 @@ import StraightenRoundedIcon from '@mui/icons-material/StraightenRounded';
 import OpacityRoundedIcon from '@mui/icons-material/OpacityRounded';
 import ScaleRoundedIcon from '@mui/icons-material/ScaleRounded';
 import ThermostatRoundedIcon from '@mui/icons-material/ThermostatRounded';
+import ElectricBoltRoundedIcon from '@mui/icons-material/ElectricBoltRounded';
 
 const categories = [
   { id: 'longueur', label: 'Longueur', icon: <StraightenRoundedIcon /> },
   { id: 'volume', label: 'Volume', icon: <OpacityRoundedIcon /> },
   { id: 'poids', label: 'Poids', icon: <ScaleRoundedIcon /> },
-  { id: 'temperature', label: 'Température', icon: <ThermostatRoundedIcon /> }
+  { id: 'temperature', label: 'Température', icon: <ThermostatRoundedIcon /> },
+  { id: 'puissance', label: 'Puissance', icon: <ElectricBoltRoundedIcon /> }
 ];
 
 const displayNumber = (number) => new Intl.NumberFormat('fr-CA', { maximumFractionDigits: 8 }).format(number);
