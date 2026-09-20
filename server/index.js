@@ -42,6 +42,9 @@ const units = {
     mois: { label: 'Mois', symbol: 'mo', factor: 2629800 },
     annee: { label: 'Années', symbol: 'an', factor: 31557600 },
     milliseconde: { label: 'Millisecondes', symbol: 'ms', factor: 0.001 }
+  puissance: {
+    watt: { label: 'Watts', symbol: 'W', factor: 1 },
+    kilowatt: { label: 'Kilowatts', symbol: 'kW', factor: 1000 }
   }
 };
 

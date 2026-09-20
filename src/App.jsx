@@ -10,6 +10,7 @@ import OpacityRoundedIcon from '@mui/icons-material/OpacityRounded';
 import ScaleRoundedIcon from '@mui/icons-material/ScaleRounded';
 import ThermostatRoundedIcon from '@mui/icons-material/ThermostatRounded';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import ElectricBoltRoundedIcon from '@mui/icons-material/ElectricBoltRounded';
 
 const categories = [
   { id: 'longueur', label: 'Longueur', icon: <StraightenRoundedIcon /> },
@@ -17,6 +18,7 @@ const categories = [
   { id: 'poids', label: 'Poids', icon: <ScaleRoundedIcon /> },
   { id: 'temperature', label: 'Température', icon: <ThermostatRoundedIcon /> },
   { id: 'temps', label: 'Temps', icon: <AccessTimeRoundedIcon /> }
+  { id: 'puissance', label: 'Puissance', icon: <ElectricBoltRoundedIcon /> }
 ];
 
 const displayNumber = (number) => new Intl.NumberFormat('fr-CA', { maximumFractionDigits: 8 }).format(number);
