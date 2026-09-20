@@ -3,7 +3,7 @@
 Notre application permet d'effectuer la conversion des mesures de différents modèles. Les modèles disponibles sont la distance, le volume, le poids, la température, le temps et la puissance.
 
 ## Instruction d'installation
-Voici les instructions pour effectuer une installation adéquate de notre application :<
+Voici les instructions pour effectuer une installation adéquate de notre application :
 
 1. Copier le dépôt Git sur votre ordinateur local.
 2. Aller sur le répertoire Git copié localement.
