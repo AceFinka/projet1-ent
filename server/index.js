@@ -33,6 +33,15 @@ const units = {
     fahrenheit: { label: 'Fahrenheit', symbol: '°F' },
     kelvin: { label: 'Kelvin', symbol: 'K' }
   },
+  temps: {
+    seconde: { label: 'Secondes', symbol: 's', factor: 1 },
+    minute: { label: 'Minutes', symbol: 'min', factor: 60 },
+    heure: { label: 'Heures', symbol: 'h', factor: 3600 },
+    jour: { label: 'Jours', symbol: 'j', factor: 86400 },
+    semaine: { label: 'Semaines', symbol: 'sem', factor: 604800 },
+    mois: { label: 'Mois', symbol: 'mo', factor: 2629800 },
+    annee: { label: 'Années', symbol: 'an', factor: 31557600 },
+    milliseconde: { label: 'Millisecondes', symbol: 'ms', factor: 0.001 }
   puissance: {
     watt: { label: 'Watts', symbol: 'W', factor: 1 },
     kilowatt: { label: 'Kilowatts', symbol: 'kW', factor: 1000 }
