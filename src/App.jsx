@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Alert, AppBar, Box, Button, Chip, Container, FormControl, IconButton, InputAdornment,
   MenuItem, Paper, Select, Snackbar, Stack, TextField, Toolbar, Tooltip, Typography
@@ -17,7 +17,7 @@ const categories = [
   { id: 'volume', label: 'Volume', icon: <OpacityRoundedIcon /> },
   { id: 'poids', label: 'Poids', icon: <ScaleRoundedIcon /> },
   { id: 'temperature', label: 'Température', icon: <ThermostatRoundedIcon /> },
-  { id: 'temps', label: 'Temps', icon: <AccessTimeRoundedIcon /> }
+  { id: 'temps', label: 'Temps', icon: <AccessTimeRoundedIcon /> },
   { id: 'puissance', label: 'Puissance', icon: <ElectricBoltRoundedIcon /> }
 ];
 
@@ -33,17 +33,28 @@ export default function App() {
   const [history, setHistory] = useState([]);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetch('/api/units').then(r => r.ok ? r.json() : Promise.reject()).then(setUnits)
-      .catch(() => setError('Impossible de joindre le serveur. Lancez npm run dev.'));
+  const loadUnits = useCallback(async () => {
+    try {
+      const response = await fetch('/api/units');
+      if (!response.ok) throw new Error();
+      const nextUnits = await response.json();
+      setUnits(nextUnits);
+      return nextUnits;
+    } catch {
+      setError('Impossible de joindre le serveur. Lancez npm run dev.');
+      return null;
+    }
   }, []);
+
+  useEffect(() => { loadUnits(); }, [loadUnits]);
 
   const availableUnits = useMemo(() => units[category] || {}, [units, category]);
   const fromUnit = availableUnits[from];
   const toUnit = availableUnits[to];
 
-  const chooseCategory = (id) => {
-    const entries = Object.keys(units[id] || {});
+  const chooseCategory = async (id) => {
+    const latestUnits = await loadUnits();
+    const entries = Object.keys(latestUnits?.[id] || units[id] || {});
     setCategory(id); setFrom(entries[0] || ''); setTo(entries[1] || entries[0] || ''); setResult(null);
   };
 
