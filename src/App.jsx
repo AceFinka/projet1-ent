@@ -75,7 +75,7 @@ export default function App() {
     <AppBar position="static" elevation={0} color="transparent" sx={{ color: '#18275c', borderBottom: '1px solid #e6e9f4', bgcolor: 'rgba(255,255,255,.85)' }}>
       <Toolbar sx={{ maxWidth: 1100, width: '100%', mx: 'auto', px: { xs: 2, sm: 3 } }}>
         <Box className="brand-mark">C</Box><Typography variant="h6" fontWeight={800} letterSpacing={-.5}>converti</Typography>
-        <Chip label="Convertisseur d'unités" size="small" sx={{ ml: 2, display: { xs: 'none', sm: 'inline-flex' }, bgcolor: '#edf0ff', color: 'primary.main', fontWeight: 600 }} />
+        <Chip label="Convertisseur d'unités v1.1" size="small" sx={{ ml: 2, display: { xs: 'none', sm: 'inline-flex' }, bgcolor: '#edf0ff', color: 'primary.main', fontWeight: 600 }} />
       </Toolbar>
     </AppBar>
     <Container maxWidth="md" sx={{ py: { xs: 5, md: 8 } }}>
