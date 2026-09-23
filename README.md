@@ -1,4 +1,4 @@
-# Laboratoire 3
+# Projet 1 (Forked du Laboratoire 3 fait avec Maximr)
 ## Description
 Notre application permet d'effectuer la conversion des mesures de différents modèles. Les modèles disponibles sont la distance, le volume, le poids, la température, le temps et la puissance.
 
