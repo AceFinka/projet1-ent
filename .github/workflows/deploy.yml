@@ -18,7 +18,9 @@ jobs:
           node-version: 20
 
       - name: Installer les dépendances
-        run: npm install
+        run: |
+          npm install
+          chmod -R +x node_modules/.bin || true
 
       - name: Vérifier la syntaxe du serveur
         run: node --check server/index.js
@@ -42,5 +44,6 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             npm install
+            chmod -R +x node_modules/.bin || true
             npm run build
             pm2 restart backend-api
