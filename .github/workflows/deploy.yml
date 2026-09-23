@@ -1,0 +1,46 @@
+name: CI/CD Pipeline - Déploiement Azure
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test_and_build:
+    name: 1. Vérification et Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Vérifier la syntaxe du serveur
+        run: node --check server/index.js
+
+      - name: Tester le build frontend
+        run: npm run build
+
+  deploy:
+    name: 2. Déploiement sur VM Azure
+    needs: test_and_build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déploiement via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USERNAME }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            cd /home/azureuser/projet1-ent
+            git fetch origin main
+            git reset --hard origin/main
+            npm install
+            npm run build
+            pm2 restart backend-api
