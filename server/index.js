@@ -81,4 +81,10 @@ app.post('/api/convert', (req, res) => {
   });
 });
 
+// Option B : Endpoint de santé et journalisation
+app.get('/health', (req, res) => {
+  console.log(`[${new Date().toISOString()}] Health check vérifié avec succès`);
+  res.status(200).json({ status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() });
+});
+
 app.listen(port, () => console.log(`API disponible sur http://localhost:${port}`));
